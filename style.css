@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ffe6f0, #ffd6eb, #ffcce6);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Soft animated background glow */
+body::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: #ffb3d9;
+    filter: blur(120px);
+    top: -100px;
+    left: -100px;
+    animation: floatGlow 6s ease-in-out infinite alternate;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: #ff99cc;
+    filter: blur(120px);
+    bottom: -100px;
+    right: -100px;
+    animation: floatGlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes floatGlow {
+    from { transform: translateY(0px); }
+    to { transform: translateY(30px); }
+}
+
+/* Main Card */
+.container {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(20px);
+    padding: 40px;
+    border-radius: 30px;
+    text-align: center;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 20px 40px rgba(255, 102, 153, 0.25);
+    animation: fadeIn 1.5s ease;
+    position: relative;
+    z-index: 2;
+}
+
+/* Title */
+.title {
+    font-size: 26px;
+    color: #ff4d88;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Message */
+.message {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* Main Button */
+.btn {
+    padding: 12px 28px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #ff4d88, #ff99cc);
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 8px 20px rgba(255, 77, 136, 0.3);
+}
+
+.btn:hover {
+    transform: scale(1.08);
+}
+
+/* Question Text */
+.big-question {
+    font-size: 20px;
+    color: #ff4d88;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+/* Yes / No Buttons */
+.buttons {
+    position: relative;
+}
+
+.yes, .no {
+    padding: 10px 22px;
+    margin: 10px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.yes {
+    background: #ff4d88;
+    color: white;
+    box-shadow: 0 5px 15px rgba(255, 77, 136, 0.3);
+}
+
+.yes:hover {
+    transform: scale(1.1);
+}
+
+.no {
+    background: #eee;
+    color: #555;
+}
+
+/* Final Message */
+.final {
+    margin-top: 20px;
+    color: #ff4d88;
+    font-weight: bold;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #ffcce6; }
+    to { text-shadow: 0 0 25px #ff66b2; }
+}
+
+/* Hidden Elements */
+.hidden {
+    display: none;
+}
+
+/* Floating Hearts Animation */
+body::selection {
+    background: #ffb3d9;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Floating heart emojis */
+.floating-heart {
+    position: absolute;
+    bottom: -50px;
+    font-size: 20px;
+    animation: floatUp 8s linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
