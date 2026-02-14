@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Will You Be My Valentine? 💖</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1 class="title">Happy Valentine’s Day 🥺💌</h1>
+
+    <p class="message">
+        I wish I could hold your hand today… 🤍<br>
+        I wish I could see your smile in front of me… 🌸<br><br>
+
+        But even with all these miles between us,<br>
+        my heart still chooses you every single day 💕<br><br>
+
+        Distance may separate our hands,<br>
+        but it will never separate our hearts 🌍❤️<br><br>
+
+        This is our first Valentine…<br>
+        and even if we’re far away,<br>
+        I want to make it special ✨
+    </p>
+
+    <button onclick="showQuestion()" class="btn">
+        I Have Something To Ask You 💖
+    </button>
+
+    <div id="question" class="hidden">
+        <p class="big-question">
+            Will You Be My Valentine? 🥺💘
+        </p>
+
+        <div class="buttons">
+            <button onclick="sayYes()" class="yes">Yes 💞</button>
+            <button onclick="moveNo(this)" class="no">No 😜</button>
+        </div>
+    </div>
+
+    <div id="finalMessage" class="hidden final">
+        You just made the happiest person alive 🥹❤️<br>
+        No distance can stop us 🌍💖<br>
+        I Love You. Always.
+    </div>
+</div>
+
+<script>
+function showQuestion() {
+    document.getElementById("question").style.display = "block";
+}
+
+function sayYes() {
+    document.getElementById("finalMessage").style.display = "block";
+}
+
+function moveNo(button) {
+    button.style.position = "absolute";
+    button.style.top = Math.random() * 80 + "%";
+    button.style.left = Math.random() * 80 + "%";
+}
+</script>
+
+</body>
+</html>
